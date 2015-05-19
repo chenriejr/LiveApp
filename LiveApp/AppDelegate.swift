@@ -10,6 +10,9 @@ import UIKit
 import Fabric
 import TwitterKit
 
+private let consumerKey = "J1qE6bkJCjM0NYjHbkK0fcmFa"
+private let consumerSecret = "11Pm1nBehXIw4jXZ9UNZjADKOYT8LirKX0b24vvlyEom0ZKsFx"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // twitter
+        Twitter.sharedInstance().startWithConsumerKey(consumerKey, consumerSecret: consumerSecret)
         Fabric.with([Twitter()])
         
         return true
