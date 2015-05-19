@@ -43,22 +43,100 @@
                                     <constraint firstAttribute="width" constant="100" id="cJD-1b-KwK"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRq-4T-ZZX">
+                                <rect key="frame" x="538" y="112" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Dpl-uJ-2lE"/>
+                                </constraints>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h95-Kx-pPE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="V51-y1-8by" firstAttribute="leading" secondItem="pGj-AW-OSr" secondAttribute="leading" id="E6E-SX-DGf"/>
                             <constraint firstItem="pGj-AW-OSr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="IAV-rd-yeF"/>
+                            <constraint firstItem="GRq-4T-ZZX" firstAttribute="centerY" secondItem="pGj-AW-OSr" secondAttribute="centerY" id="VGO-LR-bIF"/>
                             <constraint firstItem="V51-y1-8by" firstAttribute="top" secondItem="cIG-Xn-Ql6" secondAttribute="bottom" constant="37" id="WQb-VL-WeD"/>
                             <constraint firstItem="V51-y1-8by" firstAttribute="trailing" secondItem="pGj-AW-OSr" secondAttribute="trailing" id="ctH-lQ-Du9"/>
                             <constraint firstAttribute="centerX" secondItem="cIG-Xn-Ql6" secondAttribute="centerX" id="f3R-bH-aQe"/>
                             <constraint firstAttribute="centerY" secondItem="cIG-Xn-Ql6" secondAttribute="centerY" id="g2n-J2-743"/>
                             <constraint firstItem="pGj-AW-OSr" firstAttribute="centerX" secondItem="cIG-Xn-Ql6" secondAttribute="centerX" id="h8k-qt-aQl"/>
+                            <constraint firstItem="GRq-4T-ZZX" firstAttribute="trailing" secondItem="pGj-AW-OSr" secondAttribute="trailing" id="lOS-sj-ivz"/>
                             <constraint firstItem="pGj-AW-OSr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="nwA-q0-2zg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="hYO-Et-0EX" kind="showDetail" identifier="sessionValid" id="N97-0p-ucw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="Zg7-Wl-yce">
+            <objects>
+                <viewController id="AvW-Yn-3M5" customClass="MainViewController" customModule="LiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t8b-63-4ri"/>
+                        <viewControllerLayoutGuide type="bottom" id="nwB-42-Q1B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qy5-yY-au4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="itY-A5-31r">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="N2V-sz-dhT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2V-sz-dhT" id="yLg-T1-2X8">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="itY-A5-31r" firstAttribute="top" secondItem="qy5-yY-au4" secondAttribute="top" id="Cd8-gq-yOc"/>
+                            <constraint firstItem="itY-A5-31r" firstAttribute="leading" secondItem="qy5-yY-au4" secondAttribute="leading" id="Sj8-D3-cxY"/>
+                            <constraint firstItem="itY-A5-31r" firstAttribute="bottom" secondItem="nwB-42-Q1B" secondAttribute="top" id="jeu-sw-yV3"/>
+                            <constraint firstAttribute="trailing" secondItem="itY-A5-31r" secondAttribute="trailing" id="tiC-M2-GxA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4A1-6v-GQP"/>
+                    <connections>
+                        <outlet property="tableView" destination="itY-A5-31r" id="FGn-sJ-tbq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZz-xb-p8U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="231"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rQT-4b-ygT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hYO-Et-0EX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hYh-2y-fwh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AvW-Yn-3M5" kind="relationship" relationship="rootViewController" id="pkp-TL-jO2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUo-pP-Efu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="859" y="231"/>
         </scene>
     </scenes>
     <resources>
