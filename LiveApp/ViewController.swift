@@ -14,10 +14,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // test
-//        NetworkController.sharedInstance.verifyCredentials()
-        
         // accessible session var?
         
         let logInButton = TWTRLogInButton(logInCompletion: { (session, error) in
