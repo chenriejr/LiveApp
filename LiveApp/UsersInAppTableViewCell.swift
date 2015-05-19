@@ -11,7 +11,8 @@ import UIKit
 let usersInAppCollectionViewCell = "usersInAppCollectionViewCell"
 
 class UsersInAppTableViewCell: UITableViewCell {
-    
+    // TODO: filler only so it runs non nil layout param
+    // var collectionView = UsersInAppCollectionView
     var collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewLayout())
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -25,7 +26,7 @@ class UsersInAppTableViewCell: UITableViewCell {
         // CollectionView
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
         self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: usersInAppCollectionViewCell)
-        self.collectionView.backgroundColor = UIColor.lightGrayColor()
+        self.collectionView.backgroundColor = UIColor.whiteColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.contentView.addSubview(self.collectionView)
 //        return self
@@ -41,9 +42,9 @@ class UsersInAppTableViewCell: UITableViewCell {
         self.collectionView.frame = CGRectMake(0, 0.5, frame.size.width, frame.size.height - 1)
     }
 
-    func setCollectionViewDataSourceDelegate(dataSource: protocol<UICollectionViewDataSource>, index: NSInteger) {
-        self.collectionView.dataSource = dataSource
-//        self.collectionView.delegate = delegate
+    func setCollectionViewDataSourceDelegate(dataSourceDelegate delegate: protocol<UICollectionViewDelegate,UICollectionViewDataSource>, index: NSInteger) {
+        self.collectionView.dataSource = delegate
+        self.collectionView.delegate = delegate
         self.collectionView.tag = index
         self.collectionView.reloadData()
     }
@@ -55,6 +56,5 @@ class UsersInAppTableViewCell: UITableViewCell {
         self.collectionView.tag = indexPath.section
         self.collectionView.reloadData()
     }
-
 
 }

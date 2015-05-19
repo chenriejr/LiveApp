@@ -12,7 +12,7 @@ import UIKit
 let mainCell = "mainCell"
 let usersInAppCell = "usersInApp"
 
-class MainViewController: UIViewController, UITableViewDataSource, UICollectionViewDataSource {
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -21,6 +21,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UICollectionV
     let black = UIColor.blackColor()
     let grey = UIColor.lightGrayColor()
     let yellow = UIColor.yellowColor()
+    let green  = UIColor.greenColor()
+    let orange = UIColor.orangeColor()
+    let magenta = UIColor.magentaColor()
+    let brown = UIColor.brownColor()
     
     var collectionArray = [UIColor]()
     
@@ -29,9 +33,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UICollectionV
         
         //        NetworkController.sharedInstance.verifyCredentials()
         self.tableView.dataSource = self
-        
-        // mock
-        self.collectionArray = [red, blue, black, grey, yellow]
+        self.tableView.registerClass(UsersInAppTableViewCell.self, forCellReuseIdentifier: usersInAppCell)
+        self.tableView.delegate = self
+        // mock test
+        self.collectionArray = [red, blue, black, grey, yellow, green, orange, magenta, brown]
     }
     
 // MARK: UITableViewDataSource
@@ -43,7 +48,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UICollectionV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCell, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCell, forIndexPath: indexPath) as! UsersInAppTableViewCell
         
         return cell
         
@@ -51,14 +56,15 @@ class MainViewController: UIViewController, UITableViewDataSource, UICollectionV
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
     {
-        let collectionCell: UsersInAppTableViewCell = cell as! UsersInAppTableViewCell
-
+        let collectionCell = cell as! UsersInAppTableViewCell
+        collectionCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, index: indexPath.row)
         let index: NSInteger = collectionCell.collectionView.tag
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {   // TODO: behavior of item size not defined if less than 70
+        return 80
     }
     
 // MARK: UICollectionViewDataSource
@@ -70,10 +76,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UICollectionV
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionView", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(usersInAppCollectionViewCell, forIndexPath: indexPath) as! UICollectionViewCell
         
         let color = self.collectionArray[indexPath.row]
         cell.backgroundColor = color
         return cell
     }
+    
+
 }
