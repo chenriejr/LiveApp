@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70335EEE1B0B77BB00BA5F5B /* AfterPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */; };
+		70335EEE1B0B77BB00BA5F5B /* LiveStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70335EED1B0B77BB00BA5F5B /* LiveStreamViewController.swift */; };
 		70C49CBD1B026AE40008BE5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C49CBC1B026AE40008BE5A /* AppDelegate.swift */; };
 		70C49CBF1B026AE40008BE5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C49CBE1B026AE40008BE5A /* ViewController.swift */; };
 		70C49CC21B026AE40008BE5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C49CC01B026AE40008BE5A /* Main.storyboard */; };
@@ -22,8 +22,8 @@
 		70D849291B0BA11C00D8500E /* DigitsKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70D849261B0BA11C00D8500E /* DigitsKitResources.bundle */; };
 		70E1FF341B0CEF79005BB5A1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FF331B0CEF79005BB5A1 /* MainViewController.swift */; };
 		70E1FF361B0CF055005BB5A1 /* CurrentlyLiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FF351B0CF055005BB5A1 /* CurrentlyLiveTableViewCell.swift */; };
-		70E1FF381B0CF92A005BB5A1 /* HeaderTableViewCellMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FF371B0CF92A005BB5A1 /* HeaderTableViewCellMainViewController.swift */; };
 		70E1FF3A1B0CFF14005BB5A1 /* UpcomingPerformancesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FF391B0CFF14005BB5A1 /* UpcomingPerformancesTableViewCell.swift */; };
+		70E1FF3E1B0D0FBC005BB5A1 /* FooterTableViewCellForMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E1FF3D1B0D0FBC005BB5A1 /* FooterTableViewCellForMainViewController.swift */; };
 		70E5EBDF1B037A85003605EC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E5EBDC1B037A85003605EC /* Fabric.framework */; };
 		70E5EBE01B037A85003605EC /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E5EBDD1B037A85003605EC /* TwitterKit.framework */; };
 		70E5EBE11B037A85003605EC /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70E5EBDE1B037A85003605EC /* TwitterKitResources.bundle */; };
@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterPartyViewController.swift; sourceTree = "<group>"; };
+		70335EED1B0B77BB00BA5F5B /* LiveStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveStreamViewController.swift; sourceTree = "<group>"; };
 		70C49CB71B026AE40008BE5A /* LiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C49CBB1B026AE40008BE5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C49CBC1B026AE40008BE5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 		70D849261B0BA11C00D8500E /* DigitsKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DigitsKitResources.bundle; sourceTree = "<group>"; };
 		70E1FF331B0CEF79005BB5A1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		70E1FF351B0CF055005BB5A1 /* CurrentlyLiveTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentlyLiveTableViewCell.swift; sourceTree = "<group>"; };
-		70E1FF371B0CF92A005BB5A1 /* HeaderTableViewCellMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCellMainViewController.swift; sourceTree = "<group>"; };
 		70E1FF391B0CFF14005BB5A1 /* UpcomingPerformancesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingPerformancesTableViewCell.swift; sourceTree = "<group>"; };
+		70E1FF3D1B0D0FBC005BB5A1 /* FooterTableViewCellForMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterTableViewCellForMainViewController.swift; sourceTree = "<group>"; };
 		70E5EBDC1B037A85003605EC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		70E5EBDD1B037A85003605EC /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		70E5EBDE1B037A85003605EC /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				70C49CBE1B026AE40008BE5A /* ViewController.swift */,
-				70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */,
+				70335EED1B0B77BB00BA5F5B /* LiveStreamViewController.swift */,
 				70E1FF331B0CEF79005BB5A1 /* MainViewController.swift */,
 			);
 			name = ViewController;
@@ -176,7 +176,7 @@
 		70D8491E1B0B7FF300D8500E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				70E1FF371B0CF92A005BB5A1 /* HeaderTableViewCellMainViewController.swift */,
+				70E1FF3D1B0D0FBC005BB5A1 /* FooterTableViewCellForMainViewController.swift */,
 				70D8491C1B0B7FE000D8500E /* LivePerformanceStreamTableViewCell.swift */,
 				70E1FF391B0CFF14005BB5A1 /* UpcomingPerformancesTableViewCell.swift */,
 				70E1FF351B0CF055005BB5A1 /* CurrentlyLiveTableViewCell.swift */,
@@ -317,9 +317,9 @@
 				70E1FF3A1B0CFF14005BB5A1 /* UpcomingPerformancesTableViewCell.swift in Sources */,
 				70C49CBD1B026AE40008BE5A /* AppDelegate.swift in Sources */,
 				70E5EBE51B03CE1B003605EC /* NetworkController.swift in Sources */,
-				70E1FF381B0CF92A005BB5A1 /* HeaderTableViewCellMainViewController.swift in Sources */,
 				70D849201B0B82C200D8500E /* UsersInAppTableViewCell.swift in Sources */,
-				70335EEE1B0B77BB00BA5F5B /* AfterPartyViewController.swift in Sources */,
+				70335EEE1B0B77BB00BA5F5B /* LiveStreamViewController.swift in Sources */,
+				70E1FF3E1B0D0FBC005BB5A1 /* FooterTableViewCellForMainViewController.swift in Sources */,
 				70D8491D1B0B7FE000D8500E /* LivePerformanceStreamTableViewCell.swift in Sources */,
 				70E1FF361B0CF055005BB5A1 /* CurrentlyLiveTableViewCell.swift in Sources */,
 				70E1FF341B0CEF79005BB5A1 /* MainViewController.swift in Sources */,
