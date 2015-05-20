@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		70335EEE1B0B77BB00BA5F5B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70335EED1B0B77BB00BA5F5B /* MainViewController.swift */; };
+		70335EEE1B0B77BB00BA5F5B /* AfterPartyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */; };
 		70C49CBD1B026AE40008BE5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C49CBC1B026AE40008BE5A /* AppDelegate.swift */; };
 		70C49CBF1B026AE40008BE5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C49CBE1B026AE40008BE5A /* ViewController.swift */; };
 		70C49CC21B026AE40008BE5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70C49CC01B026AE40008BE5A /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		70335EED1B0B77BB00BA5F5B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterPartyViewController.swift; sourceTree = "<group>"; };
 		70C49CB71B026AE40008BE5A /* LiveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C49CBB1B026AE40008BE5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70C49CBC1B026AE40008BE5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				70C49CBE1B026AE40008BE5A /* ViewController.swift */,
-				70335EED1B0B77BB00BA5F5B /* MainViewController.swift */,
+				70335EED1B0B77BB00BA5F5B /* AfterPartyViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 				70C49CBD1B026AE40008BE5A /* AppDelegate.swift in Sources */,
 				70E5EBE51B03CE1B003605EC /* NetworkController.swift in Sources */,
 				70D849201B0B82C200D8500E /* UsersInAppTableViewCell.swift in Sources */,
-				70335EEE1B0B77BB00BA5F5B /* MainViewController.swift in Sources */,
+				70335EEE1B0B77BB00BA5F5B /* AfterPartyViewController.swift in Sources */,
 				70D8491D1B0B7FE000D8500E /* MainTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

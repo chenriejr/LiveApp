@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hYO-Et-0EX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hYO-Et-0EX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -78,10 +78,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Main View Controller-->
+        <!--After Party View Controller-->
         <scene sceneID="Zg7-Wl-yce">
             <objects>
-                <viewController id="AvW-Yn-3M5" customClass="MainViewController" customModule="LiveApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AvW-Yn-3M5" customClass="AfterPartyViewController" customModule="LiveApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t8b-63-4ri"/>
                         <viewControllerLayoutGuide type="bottom" id="nwB-42-Q1B"/>
@@ -90,7 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="itY-A5-31r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="itY-A5-31r">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -104,6 +104,103 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i0j-0z-7QN" id="1H8-SO-bnt">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JzQ-Nh-Hrh">
+                                                    <rect key="frame" x="493" y="262" width="30" height="30"/>
+                                                    <state key="normal" image="message-7">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="message:" destination="AvW-Yn-3M5" eventType="touchUpInside" id="DWH-ws-Q8O"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQZ-VI-DBe">
+                                                    <rect key="frame" x="531" y="262" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="iHc-6J-W7U"/>
+                                                    </constraints>
+                                                    <state key="normal" image="upload-7">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="share:" destination="AvW-Yn-3M5" eventType="touchUpInside" id="PLo-a5-wy0"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKx-cy-h51">
+                                                    <rect key="frame" x="569" y="262" width="30" height="30"/>
+                                                    <state key="normal" image="star-7">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="star:" destination="AvW-Yn-3M5" eventType="touchUpInside" id="KeU-ec-fT1"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-4U-BEg">
+                                                    <rect key="frame" x="1" y="262" width="30" height="30"/>
+                                                    <state key="normal" image="home-7">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="home:" destination="AvW-Yn-3M5" eventType="touchUpInside" id="B3U-GG-qMP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-0X-FBn">
+                                                    <rect key="frame" x="450" y="262" width="35" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="35" id="bTl-R0-f2c"/>
+                                                    </constraints>
+                                                    <state key="normal" image="heart-7">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="like:" destination="AvW-Yn-3M5" eventType="touchUpInside" id="6PM-Tg-cYo"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mock" translatesAutoresizingMaskIntoConstraints="NO" id="Hbo-QZ-OS4">
+                                                    <rect key="frame" x="8" y="8" width="584" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="BYy-xU-KzB"/>
+                                                        <constraint firstAttribute="width" constant="414" id="ivy-jO-HjQ"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="ivy-jO-HjQ"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="trailing" secondItem="1H8-SO-bnt" secondAttribute="trailingMargin" id="1Mu-LC-qAH"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="leading" secondItem="1H8-SO-bnt" secondAttribute="leadingMargin" id="4Or-sw-Xx8"/>
+                                                <constraint firstItem="PKx-cy-h51" firstAttribute="leading" secondItem="LQZ-VI-DBe" secondAttribute="trailing" constant="8" symbolic="YES" id="5er-ST-VGt"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PKx-cy-h51" secondAttribute="trailing" constant="-7" id="KSc-b5-Opm"/>
+                                                <constraint firstItem="JzQ-Nh-Hrh" firstAttribute="top" secondItem="1Hf-0X-FBn" secondAttribute="top" id="LXQ-zs-aVc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Hbo-QZ-OS4" secondAttribute="trailing" id="MDd-hT-euf"/>
+                                                <constraint firstItem="JzQ-Nh-Hrh" firstAttribute="leading" secondItem="1Hf-0X-FBn" secondAttribute="trailing" constant="8" symbolic="YES" id="N1a-zX-0cO"/>
+                                                <constraint firstItem="JzQ-Nh-Hrh" firstAttribute="top" secondItem="LQZ-VI-DBe" secondAttribute="top" id="Nfg-hK-2KN"/>
+                                                <constraint firstItem="eY0-4U-BEg" firstAttribute="top" secondItem="1Hf-0X-FBn" secondAttribute="top" id="QkK-nF-g3j"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="top" secondItem="1H8-SO-bnt" secondAttribute="top" id="SNM-Pt-EFc"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="leading" secondItem="1H8-SO-bnt" secondAttribute="leadingMargin" id="SeY-LP-Ymo"/>
+                                                <constraint firstItem="eY0-4U-BEg" firstAttribute="leading" secondItem="1H8-SO-bnt" secondAttribute="leadingMargin" constant="-7" id="Vbf-Ub-zlg"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hbo-QZ-OS4" secondAttribute="trailing" id="gv1-lj-CAx"/>
+                                                <constraint firstItem="LQZ-VI-DBe" firstAttribute="bottom" secondItem="1H8-SO-bnt" secondAttribute="bottomMargin" id="ix1-Z6-2Kj"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="leading" secondItem="1H8-SO-bnt" secondAttribute="leading" id="mWm-4n-TIf"/>
+                                                <constraint firstItem="LQZ-VI-DBe" firstAttribute="top" secondItem="PKx-cy-h51" secondAttribute="top" id="pc1-gg-Mvh"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="top" secondItem="1H8-SO-bnt" secondAttribute="topMargin" id="sDd-a6-q5a"/>
+                                                <constraint firstItem="Hbo-QZ-OS4" firstAttribute="top" secondItem="1H8-SO-bnt" secondAttribute="topMargin" id="vCx-am-hGu"/>
+                                                <constraint firstItem="LQZ-VI-DBe" firstAttribute="leading" secondItem="JzQ-Nh-Hrh" secondAttribute="trailing" constant="8" symbolic="YES" id="zHs-ce-vA6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Hbo-QZ-OS4" secondAttribute="bottom" constant="34" id="zJa-KH-IkY"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="1Mu-LC-qAH"/>
+                                                    <exclude reference="4Or-sw-Xx8"/>
+                                                    <exclude reference="SNM-Pt-EFc"/>
+                                                    <exclude reference="gv1-lj-CAx"/>
+                                                    <exclude reference="mWm-4n-TIf"/>
+                                                    <exclude reference="vCx-am-hGu"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -148,5 +245,11 @@
     </scenes>
     <resources>
         <image name="emailshare.png" width="240" height="198"/>
+        <image name="heart-7" width="30" height="30"/>
+        <image name="home-7" width="30" height="30"/>
+        <image name="message-7" width="30" height="30"/>
+        <image name="mock" width="554" height="369"/>
+        <image name="star-7" width="30" height="30"/>
+        <image name="upload-7" width="29" height="30"/>
     </resources>
 </document>
