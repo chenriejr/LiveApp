@@ -11,7 +11,7 @@ import UIKit
 // cell constants
 let mainCell = "mainCell"
 
-class AfterPartyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class LiveStreamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     // mock for users prof
@@ -109,10 +109,12 @@ class AfterPartyViewController: UIViewController, UITableViewDataSource, UITable
         
         return cell
     }
+    
 // MARK: Button Actions
+    
     @IBAction func home(sender: UIButton)
     {
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     @IBAction func like(sender: UIButton)
