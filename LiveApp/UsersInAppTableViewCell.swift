@@ -8,7 +8,7 @@
 
 import UIKit
 
-let usersInAppCollectionViewCell = "usersInAppCollectionViewCell"
+let usersInAppCollectionViewReuseIdentifier = "usersInApp"
 
 class UsersInAppTableViewCell: UITableViewCell {
     // TODO: filler only so it runs non nil layout param
@@ -25,7 +25,7 @@ class UsersInAppTableViewCell: UITableViewCell {
         flowLayout.scrollDirection = UICollectionViewScrollDirection.Horizontal
         // CollectionView
         self.collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: usersInAppCollectionViewCell)
+        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: usersInAppCollectionViewReuseIdentifier)
         self.collectionView.backgroundColor = UIColor.whiteColor()
         self.collectionView.showsHorizontalScrollIndicator = false
         self.contentView.addSubview(self.collectionView)

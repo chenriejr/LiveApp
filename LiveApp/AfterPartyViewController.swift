@@ -10,7 +10,6 @@ import UIKit
 
 // cell constants
 let mainCell = "mainCell"
-let usersInAppCell = "usersInApp"
 
 class AfterPartyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -33,12 +32,12 @@ class AfterPartyViewController: UIViewController, UITableViewDataSource, UITable
         
         //        NetworkController.sharedInstance.verifyCredentials()
         self.tableView.dataSource = self
-        self.tableView.registerClass(UsersInAppTableViewCell.self, forCellReuseIdentifier: usersInAppCell)
         self.tableView.delegate = self
-        
+        self.tableView.registerClass(UsersInAppTableViewCell.self, forCellReuseIdentifier: usersInAppCollectionViewReuseIdentifier)
+        // prep for dynamic cell content
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        // mock test
+        // mock users profile
         self.collectionArray = [red, blue, black, grey, yellow, green, orange, magenta, brown]
     }
     
@@ -62,12 +61,12 @@ class AfterPartyViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.section == 0 {
-        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCell, forIndexPath: indexPath) as! UsersInAppTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCollectionViewReuseIdentifier, forIndexPath: indexPath) as! UsersInAppTableViewCell
         
         return cell
         }
         else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(mainTableViewCell, forIndexPath: indexPath) as! MainTableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(livePerformanceStreamReuseIdentifier, forIndexPath: indexPath) as! LivePerformanceStreamTableViewCell
             // no highlight upon selection for live app cell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
@@ -103,7 +102,7 @@ class AfterPartyViewController: UIViewController, UITableViewDataSource, UITable
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(usersInAppCollectionViewCell, forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(usersInAppCollectionViewReuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
         
         let color = self.collectionArray[indexPath.row]
         cell.backgroundColor = color
