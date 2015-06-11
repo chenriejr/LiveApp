@@ -48,13 +48,5 @@ class UsersInAppTableViewCell: UITableViewCell {
         self.collectionView.tag = index
         self.collectionView.reloadData()
     }
-    
-    func setCollectionViewDataSourceDelegate(dataSourceDelegate delegate: protocol<UICollectionViewDelegate,UICollectionViewDataSource>, indexPath: NSIndexPath) {
-        self.collectionView.dataSource = delegate
-        self.collectionView.delegate = delegate
-//        self.collectionView.indexPath = indexPath
-        self.collectionView.tag = indexPath.section
-        self.collectionView.reloadData()
-    }
 
 }

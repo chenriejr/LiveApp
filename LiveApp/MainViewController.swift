@@ -51,7 +51,7 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(upcomingPerformancesCellReuseIdentifier, forIndexPath: indexPath) as! UpcomingPerformancesTableViewCell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.backgroundView = UIImageView(image: UIImage(named: "mock.1"))
+            cell.backgroundView = UIImageView(image: UIImage(named: ""))
             // button to square
             cell.squareButton()
         
