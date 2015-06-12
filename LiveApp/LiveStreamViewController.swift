@@ -8,10 +8,8 @@
 
 import UIKit
 
-// cell constants
-let mainCell = "mainCell"
-
-class LiveStreamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+// commentDelegate
+class LiveStreamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, donateFromLivePerformanceStream, shareFromLivePerformanceStream, presentComment {
 
     @IBOutlet weak var tableView: UITableView!
     // mock for users prof
@@ -26,6 +24,7 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
     let brown = UIColor.brownColor()
     ////
     var collectionArray = [UIColor]()
+    var alert = AlertController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,36 +41,48 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
     }
     
 // MARK: UITableViewDataSource
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 2
+        return 3
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        if section == 0 {
+    {   // only one cell for users, label, and live stream
         return 1
-        }
-        else {
-            return 1
-        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.section == 0 {
-        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCollectionViewReuseIdentifier, forIndexPath: indexPath) as! UsersInAppTableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(usersInAppCollectionViewReuseIdentifier,forIndexPath: indexPath) as! UsersInAppTableViewCell
         return cell
+            
         }
+        
+        else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(numberOfUsersCountReuseIdentifier, forIndexPath: indexPath) as! NumberOfUsersCountTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            // demo
+            let hereNow = "1,445"
+            cell.numberOfUsers.text = NSString(format: "%@ here now", hereNow) as String
+            cell.liveFromVenue.text = "live from the xxx stage tonight in LA...#zzz"
+            //
+            return cell
+        }
+            
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(livePerformanceStreamReuseIdentifier, forIndexPath: indexPath) as! LivePerformanceStreamTableViewCell
             // no highlight upon selection for live app cell
             cell.selectionStyle = UITableViewCellSelectionStyle.None
+            // have a view in place for live stream, background just for demo
+            cell.backgroundView = UIImageView(image: UIImage(named: "stream"))
+            // delegates
+            cell.donateDelegate = self
+            cell.shareDelegate = self
+            cell.postCommentDelegate = self
+            //
             return cell
         }
-        
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
@@ -88,13 +99,13 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
         if indexPath.section == 0 {
             return 80
         }
+            
         else {
             return UITableViewAutomaticDimension
         }
     }
     
 // MARK: UICollectionViewDataSource
-    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.collectionArray.count
@@ -105,36 +116,31 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(usersInAppCollectionViewReuseIdentifier, forIndexPath: indexPath) as! UICollectionViewCell
         
         let color = self.collectionArray[indexPath.row]
+        // profile pictures to circles
+        cell.layer.cornerRadius = 22
+//        cell.layer.borderWidth = 1
+        //
         cell.backgroundColor = color
         
         return cell
     }
     
-// MARK: Button Actions
-    
-    @IBAction func home(sender: UIButton)
-    {
-        self.navigationController?.popViewControllerAnimated(true)
+// MARK: Alert Delegate Actions
+    func donateFromLivePerformance() {
+        let donate = alert.donate()
+        self.presentViewController(donate, animated: true, completion: nil)
     }
+    
+    func shareFromLivePerformance(text: String, url: NSURL) {
+        
+        let activityItems = [text, url]
+        let share = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.navigationController?.presentViewController(share, animated: true, completion: nil)
+    }
+    
+    func presentComment() {
+        let comment = self.alert.shareComment()
 
-    @IBAction func like(sender: UIButton)
-    {
-        
+        self.presentViewController(comment, animated: true, completion: nil)
     }
-    
-    @IBAction func message(sender: UIButton)
-    {
-        
-    }
-    
-    @IBAction func share(sender: UIButton)
-    {
-        
-    }
-    
-    @IBAction func star(sender: UIButton)
-    {
-        
-    }
-    
 }
