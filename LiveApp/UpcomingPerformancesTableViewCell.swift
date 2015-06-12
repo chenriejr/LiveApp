@@ -9,17 +9,24 @@
 
 import UIKit
 
+protocol shareFromUpcomingPerformances
+{
+    func share(text: String, url: NSURL)
+}
+
 let upcomingPerformancesCellReuseIdentifier = "upcomingPerformancesCell"
 
 class UpcomingPerformancesTableViewCell : UITableViewCell {
     
     @IBOutlet var goingConfirmation: UIButton!
-    
+    // share
+    var delegate: shareFromUpcomingPerformances?
+    //
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        // shape it into a square
+        
     }
-    
+    // shape it into a square
     func squareButton() {
         
         self.goingConfirmation.layer.cornerRadius = 2
@@ -27,8 +34,17 @@ class UpcomingPerformancesTableViewCell : UITableViewCell {
         self.goingConfirmation.layer.borderColor! = UIColor.blackColor().CGColor
     }
 
+    @IBAction func share(sender: UIButton)
+    {
+        let text = "text"
+        // if let
+        let videoUrl = NSURL(string: "http://www.google.com/")!
+        self.delegate?.share(text, url: videoUrl)
+        //
+    }
+    
     @IBAction func confirmAttendance(sender: UIButton)
     {
-        self.goingConfirmation.backgroundColor = UIColor.blueColor()
+        sender.backgroundColor = UIColor.blackColor()
     }
 }
