@@ -7,19 +7,28 @@
 //
 
 import UIKit
+import TwitterKit
 
-class MainViewController : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, shareFromUpcomingPerformances {
     
     @IBOutlet weak var tableView: UITableView!
-
+    let userInfo = UserInfo()
     
     override func viewDidLoad() {
         
+        // title
+        self.title = "Live App"
+        // demo
+        self.userInfo.getUserInfo { (userInfo) -> Void in
+            println(userInfo)
+        }
+        //
         self.tableView.dataSource = self
         self.tableView.delegate = self
         // prep for dynamic cell content
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
     
 // MARK: Datasource methods
@@ -45,13 +54,20 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier(currentlyLiveReuseIdentifier, forIndexPath: indexPath) as! CurrentlyLiveTableViewCell
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.backgroundView = UIImageView(image: UIImage(named: "mock"))
+        // red indicator for live
+        cell.liveBox.layer.borderWidth = 1
+        cell.liveBox.layer.borderColor = UIColor.redColor().CGColor
+        //
         return cell
             
         }
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(upcomingPerformancesCellReuseIdentifier, forIndexPath: indexPath) as! UpcomingPerformancesTableViewCell
+            // share delegate
+            cell.delegate = self
+            //
             cell.selectionStyle = UITableViewCellSelectionStyle.None
-            cell.backgroundView = UIImageView(image: UIImage(named: ""))
+            cell.backgroundView = UIImageView(image: UIImage(named: "kendrick"))
             // button to square
             cell.squareButton()
         
@@ -75,22 +91,27 @@ class MainViewController : UIViewController, UITableViewDataSource, UITableViewD
 //    }
     
 // FOOTER: Footer for cells
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        // no footer unless last section
-        if section == 1 {
-        let header = tableView.dequeueReusableCellWithIdentifier(footerForMainViewControllerReuseIdentifier) as! FooterTableViewCellForMainViewController
-        return header.contentView
-        }
-        else {
-            var view = UIView()
-            return view
-        }
-    }
+//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        // no footer unless last section
+//        if section == 1 {
+//        let header = tableView.dequeueReusableCellWithIdentifier(footerForMainViewControllerReuseIdentifier) as! FooterTableViewCellForMainViewController
+//        return header.contentView
+//        }
+//        else {
+//            var view = UIView()
+//            return view
+//        }
+//    }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 44
-    }
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 44
+//    }
     
-// MARK: Actions
+// MARK: Protocol shareFromUpcomingPerformances
+    func share(text: String, url: NSURL) {
+        let activityItems = [text, url]
+        let shareController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.navigationController?.presentViewController(shareController, animated: true, completion: nil)
+    }
     
 }
