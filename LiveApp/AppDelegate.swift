@@ -21,9 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // twitter
+        // customize bar tint elements
+        UINavigationBar.appearance().tintColor = UIColor.blackColor()
+//        UINavigationBar.appearance().titleTextAttributes
+        //
+        
+        // Twitter
         Twitter.sharedInstance().startWithConsumerKey(consumerKey, consumerSecret: consumerSecret)
         Fabric.with([Twitter()])
+        
+        // Check if the user is logged in or not to present the sign in screen.
+        if Twitter.sharedInstance().session() == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController: AnyObject! = storyboard.instantiateViewControllerWithIdentifier("TwitterLogIn")
+            self.window?.rootViewController = signInViewController as? UIViewController
+        }
+        //
         
         return true
     }
