@@ -12,6 +12,8 @@ let currentlyLiveReuseIdentifier = "currentlyLiveTableViewCell"
 
 class CurrentlyLiveTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var liveBox: UIView!
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
