@@ -25,13 +25,15 @@ protocol presentComment
 
 let livePerformanceStreamReuseIdentifier = "livePerformanceStreamCell"
 
-class LivePerformanceStreamTableViewCell: UITableViewCell {
+class LivePerformanceStreamTableViewCell: UITableViewCell, commentDelegate {
     // delegates
     var donateDelegate: donateFromLivePerformanceStream?
     var shareDelegate: shareFromLivePerformanceStream?
-    var postCommentDelegate: presentComment?
+    var presentCommentDelegate: presentComment?
     //
 
+    @IBOutlet weak var comments: UITextView!
+    
     var alert = AlertController()
     
     required init(coder aDecoder: NSCoder) {
@@ -48,7 +50,8 @@ class LivePerformanceStreamTableViewCell: UITableViewCell {
     @IBAction func comment(sender: UIButton)
     {
         let comment = self.alert.shareComment()
-        self.postCommentDelegate?.presentComment()
+        self.alert.comment = self
+        self.presentCommentDelegate?.presentComment()
     }
 
     @IBAction func share(sender: UIButton)
@@ -59,8 +62,10 @@ class LivePerformanceStreamTableViewCell: UITableViewCell {
         self.shareDelegate?.shareFromLivePerformance(text, url: url)
     }
 
-    @IBAction func like(sender: UIButton)
-    {
-        sender.backgroundColor = UIColor.blackColor()
+// MARK: Comment Delegate
+    func postComment(text: String) {
+
+        self.comments.text = text
     }
+    
 }
