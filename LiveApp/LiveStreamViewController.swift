@@ -8,11 +8,10 @@
 
 import UIKit
 
-// commentDelegate
 class LiveStreamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, donateFromLivePerformanceStream, shareFromLivePerformanceStream, presentComment {
 
     @IBOutlet weak var tableView: UITableView!
-    // mock for users prof
+    // mock for users profile
     let red = UIColor.redColor()
     let blue = UIColor.blueColor()
     let black = UIColor.blackColor()
@@ -22,7 +21,7 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
     let orange = UIColor.orangeColor()
     let magenta = UIColor.magentaColor()
     let brown = UIColor.brownColor()
-    ////
+    //
     var collectionArray = [UIColor]()
     var alert = AlertController()
     
@@ -76,10 +75,10 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             // have a view in place for live stream, background just for demo
             cell.backgroundView = UIImageView(image: UIImage(named: "stream"))
-            // delegates
+            // delegates for presenting alertViews TODO: change to UIView
             cell.donateDelegate = self
             cell.shareDelegate = self
-            cell.postCommentDelegate = self
+            cell.presentCommentDelegate = self
             //
             return cell
         }
@@ -140,7 +139,7 @@ class LiveStreamViewController: UIViewController, UITableViewDataSource, UITable
     
     func presentComment() {
         let comment = self.alert.shareComment()
-
         self.presentViewController(comment, animated: true, completion: nil)
     }
+
 }
