@@ -62,7 +62,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1032" y="279"/>
+            <point key="canvasLocation" x="1023" y="259"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="MC7-QK-wuz">
@@ -79,7 +79,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WWl-GV-ObX">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="separatorColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="currentlyLiveTableViewCell" rowHeight="200" id="RqZ-Ki-4lG" customClass="CurrentlyLiveTableViewCell" customModule="LiveApp" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -128,7 +128,7 @@
                                                     <rect key="frame" x="226" y="41" width="130" height="150"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YHZ-Xa-FoH">
-                                                            <rect key="frame" x="8" y="60" width="114" height="30"/>
+                                                            <rect key="frame" x="8" y="8" width="114" height="134"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="134" id="9hV-SQ-9TB"/>
@@ -151,7 +151,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstItem="YHZ-Xa-FoH" firstAttribute="top" secondItem="Iko-ex-hgu" secondAttribute="top" constant="60" id="7Hy-m3-ooO"/>
+                                                        <constraint firstItem="YHZ-Xa-FoH" firstAttribute="top" secondItem="Iko-ex-hgu" secondAttribute="top" constant="8" id="7Hy-m3-ooO"/>
                                                         <constraint firstAttribute="height" constant="150" id="LIU-XW-bNf"/>
                                                         <constraint firstItem="YHZ-Xa-FoH" firstAttribute="centerY" secondItem="Iko-ex-hgu" secondAttribute="centerY" id="Uga-wi-0Wq"/>
                                                         <constraint firstAttribute="width" constant="130" id="c0q-jw-UyR"/>

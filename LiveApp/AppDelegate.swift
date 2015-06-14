@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // customize bar tint elements
         UINavigationBar.appearance().tintColor = UIColor.blackColor()
-//        UINavigationBar.appearance().titleTextAttributes
+//        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: 
         //
         
         // Twitter
