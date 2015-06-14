@@ -19,10 +19,8 @@ class TwitterLogInViewController: UIViewController {
         let logInButton = TWTRLogInButton(logInCompletion: { (session, error) in
                 if (session != nil) {
                     
-                    let user = TWTRUser()
-                    
-                    println("signed in as \(session.userName, session.userID, user.profileImageURL)");
-                    self.performSegueWithIdentifier("sessionValid", sender: self)
+                    println("signed in as \(session.userName, session.userID)")
+                    self.performSegueWithIdentifier("sessionValid", sender: nil)
                     
                 } else {
                     println("error: \(error.localizedDescription)");
