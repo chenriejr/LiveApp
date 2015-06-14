@@ -10,14 +10,14 @@ import UIKit
 
 let UITextFieldDidChangeNotification = "textFieldUpdate"
 
-//protocol commentDelegate
-//{
-//    func postComment(text: String)
-//}
+protocol commentDelegate
+{
+    func postComment(text: String)
+}
 
 class AlertController: UIAlertController {
     
-//    var delegate: commentDelegate?
+    var comment: commentDelegate?
     
     func donate() -> UIAlertController {
         // just actions
@@ -53,15 +53,14 @@ class AlertController: UIAlertController {
         
         comment.addTextFieldWithConfigurationHandler { (textField) -> Void in
             textField.placeholder = "Comment"
-            
-            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue(), usingBlock: { (notification) -> Void in
-                
-            })
         }
         
         comment.addAction(UIAlertAction(title: "Post", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
             
-            
+            if let commentText = comment.textFields![0] as? UITextField {
+                self.comment?.postComment(commentText.text)
+            }
+
         }))
         
         return comment
